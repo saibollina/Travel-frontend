@@ -1,14 +1,15 @@
 // Styles
 import "@mdi/font/css/materialdesignicons.css";
 import "vuetify/styles";
+import "vuetify/dist/vuetify.css";
 
 // Vuetify
 import { createVuetify } from "vuetify";
 
-const OCTheme = {
+const TITheme = {
   dark: false,
   colors: {
-    primary: "#80162B",
+    primary: "#555",
     secondary: "#E1E1E1",
     accent: "#47121D",
     success: "#47121D",
@@ -24,7 +25,7 @@ export default createVuetify({
   theme: {
     defaultTheme: "OCTheme",
     themes: {
-      OCTheme,
+      OCTheme: TITheme,
     },
   },
 });
