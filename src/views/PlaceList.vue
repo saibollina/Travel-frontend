@@ -42,7 +42,7 @@ onMounted(async () => {
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4 mb-md-0 place">
                     <a href="/place">
-                        <img class="card-img" src="/ny2.jpg" alt="">
+                        <img class="card-img" src="/ny1.jpg" alt="">
                         <h4 class="card-title">New York</h4>
                         <p>New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial.</p>
                         <button type="button" class="btn btn-warning">View Details</button>
