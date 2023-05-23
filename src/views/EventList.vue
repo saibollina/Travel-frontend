@@ -17,7 +17,7 @@ onMounted(async () => {
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4 mb-md-0 event">
                     <a href="/event">
-                        <img class="card-img" src="museum.jpg" alt="">
+                        <img class="card-img" src="/museum.jpg" alt="">
                         <h4 class="card-title">Museum</h4>
                         <p>The Metropolitan Museum of Art. Opened in 1880 and situated on Central Park, this iconic New York institution contains 5,000 years of art – from prehistory to the latest in contemporary works</p>
                         <button type="button" class="btn btn-warning">View Details</button>
@@ -26,7 +26,7 @@ onMounted(async () => {
 
                  <div class="col-md-6 col-lg-4 mb-4 mb-md-0 event">
                     <a href="/event">
-                        <img class="card-img" src="edge.jpg" alt="">
+                        <img class="card-img" src="/edge.jpg" alt="">
                         <h4 class="card-title">Edge</h4>
                         <p>Protruding 100-stories-high observation deck, with a glass floor, bar & 360-degree NYC views.</p>
                         <button type="button" class="btn btn-warning">View Details</button>
@@ -34,7 +34,7 @@ onMounted(async () => {
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4 mb-md-0 event">
                     <a href="/event">
-                        <img class="card-img" src="statue.jpg" alt="">
+                        <img class="card-img" src="/statue.jpg" alt="">
                         <h4 class="card-title">The Statue of Liberty</h4>
                         <p>The Statue of Liberty is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States. The copper statue</p>
                         <button type="button" class="btn btn-warning">View Details</button>
