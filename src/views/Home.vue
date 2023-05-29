@@ -9,7 +9,7 @@ onMounted(async () => {
 </script>
 <template>  
           <div class="row">
-            <img class="col-md-6" src="home.png" />
+            <img class="col-md-6" src="/home.png" />
             <div class="col-md-6 left-nav">
               <h2 class="display-3 text-1000 fw-normal title">Let’s make a tour</h2>
               <h2 class="display-3 text-primary fw-bold">Discover the beauty</h2>
@@ -54,14 +54,14 @@ onMounted(async () => {
         <section class="showcase">
             <div class="container-fluid p-0">
                 <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('it2.jpg')"></div>
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" :style="{ backgroundImage: 'url(/it2.jpg)' }"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="padding-left:30px;">
                         <h2>What we do?</h2>
                         <p class="lead mb-0">we strive to provide you with a comprehensive and dynamic online experience. Whether you're seeking information, entertainment, or connectivity, our platform is designed to meet your needs.</p>
                     </div>
                 </div>
                 <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('it3.jpg')"></div>
+                    <div class="col-lg-6 text-white showcase-img" :style="{ backgroundImage: 'url(/it3.jpg)' }"></div>
                     <div class="col-lg-6 my-auto showcase-text"  style="padding-right:30px;padding-left:10px;">
                         <h2>How we do?</h2>
                         <p class="lead mb-0">Our homepage features a clean and intuitive interface, making it easy for you to explore the various sections of our website. We believe in a seamless user experience, ensuring that you can quickly find what you're looking for.</p>
