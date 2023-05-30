@@ -1,10 +1,35 @@
 <script setup>
 import { onMounted } from "vue";
 import { useRouter } from "vue-router";
+import PlaceServices from "../services/PlaceServices.js";
+import { ref } from "vue";
+import Loader from "../components/Loader.vue";
+import { getImageUrl } from "../utils.js";
+
+
+const events = ref([]);
+const loader = ref(true);
 
 onMounted(async () => {
- 
+  await getEvents();
+  loader.value = false;
 });
+
+async function getEvents() {
+  await PlaceServices.getEvents()
+    .then((response) => {
+      events.value = response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+const getEventUrl = (id)=>{
+    return "/place/"+id
+}
+
+
 </script>
 
 <template>
@@ -14,29 +39,16 @@ onMounted(async () => {
             <div class="container">
                 <h2>Events</h2>
             </div>
+            <Loader v-if="loader" />
+            <div class="alert alert-warning"  v-if="!loader && events.length == 0" role="alert" style="margin-top:30px;">
+                No Events Available Now!
+            </div>
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4 mb-md-0 event">
-                    <a href="./event">
-                        <img class="card-img" src="/museum.jpg" alt="">
-                        <h4 class="card-title">Museum</h4>
-                        <p>The Metropolitan Museum of Art. Opened in 1880 and situated on Central Park, this iconic New York institution contains 5,000 years of art – from prehistory to the latest in contemporary works</p>
-                        <button type="button" class="btn btn-warning">View Details</button>
-                    </a>    
-                </div>
-
-                 <div class="col-md-6 col-lg-4 mb-4 mb-md-0 event">
-                    <a href="./event">
-                        <img class="card-img" src="/edge.jpg" alt="">
-                        <h4 class="card-title">Edge</h4>
-                        <p>Protruding 100-stories-high observation deck, with a glass floor, bar & 360-degree NYC views.</p>
-                        <button type="button" class="btn btn-warning">View Details</button>
-                    </a>    
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4 mb-md-0 event">
-                    <a href="./event">
-                        <img class="card-img" src="/statue.jpg" alt="">
-                        <h4 class="card-title">The Statue of Liberty</h4>
-                        <p>The Statue of Liberty is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States. The copper statue</p>
+                <div v-for="event in events" :key="event.id" class="col-md-6 col-lg-4 mb-4 mb-md-0 place">
+                    <a :href="getEventUrl(event.id)">
+                        <img class="card-img" :src="getImageUrl(event.image)" alt="">
+                        <h4 class="card-title">{{ event.name }}</h4>
+                        <p>{{ event.description }}</p>
                         <button type="button" class="btn btn-warning">View Details</button>
                     </a>    
                 </div>
@@ -62,7 +74,7 @@ onMounted(async () => {
 a:hover {
     color:black;
 }
-.event {
+.place {
     cursor: pointer;
     margin-top: 20px;
 }
