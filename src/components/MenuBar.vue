@@ -42,17 +42,17 @@ function logout() {
         ></v-img>
       </router-link>
       <v-toolbar-title class="title" :style="{color:'white',cursor:'pointer'}" >
-        <!-- <a href="/">{{ title }}</a> -->
-         <a class="btn" href="/places" style="margin-left:10px;">
+        <!-- <a href="./">{{ title }}</a> -->
+         <a class="btn" href="./places" style="margin-left:10px;">
         Places
         </a>
-        <a class="btn" href="/events">
+        <a class="btn" href="./events">
           Events
         </a>
-        <a class="btn" href="/hotels" style="margin-left:10px;">
+        <a class="btn" href="./hotels" style="margin-left:10px;">
         Hotels
         </a>
-        <a class="btn" href="/plans">
+        <a class="btn" href="./plans">
           Plans
         </a>
       </v-toolbar-title>
@@ -68,7 +68,7 @@ function logout() {
         </div>
       </div>
 
-      <!-- <a class="btn" href="/places">
+      <!-- <a class="btn" href="./places">
         Places
       </a> -->
       <v-btn v-if="user === null" class="mx-2" :to="{ name: 'login' }">

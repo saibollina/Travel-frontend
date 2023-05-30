@@ -27,7 +27,7 @@ async function getEvents() {
 }
 
 const getEventUrl = (id)=>{
-    return "/place/"+id
+    return "./place/"+id
 }
 
 
