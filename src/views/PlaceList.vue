@@ -2,7 +2,7 @@
 import { onMounted } from "vue";
 import { useRouter } from "vue-router";
 
-onMounted(async () => {
+onMounted(async () => { 
  
 });
 </script>
