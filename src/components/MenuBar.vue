@@ -7,7 +7,7 @@ import UserServices from "../services/UserServices";
 const router = useRouter();
 
 const user = ref(null);
-const title = ref("Recipes");
+const title = ref("Travel Itenarary");
 const logoURL = ref("");
 
 onMounted(() => {
@@ -31,8 +31,8 @@ function logout() {
 
 <template>
   <div>
-    <v-app-bar color="primary" app dark>
-      <router-link :to="{ name: 'recipes' }">
+    <v-app-bar color='#FE7A15' app dark>
+      <router-link :to="{ name: 'home' }">
         <v-img
           class="mx-2"
           :src="logoURL"
@@ -41,16 +41,38 @@ function logout() {
           contain
         ></v-img>
       </router-link>
-      <v-toolbar-title class="title">
-        {{ title }}
+      <v-toolbar-title class="title" :style="{color:'white',cursor:'pointer'}" >
+        <!-- <a href="/">{{ title }}</a> -->
+         <a class="btn" href="/places" style="margin-left:10px;">
+        Places
+        </a>
+        <a class="btn" href="/events">
+          Events
+        </a>
+        <a class="btn" href="/hotels" style="margin-left:10px;">
+        Hotels
+        </a>
+        <a class="btn" href="/plans">
+          Plans
+        </a>
       </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn class="mx-2" :to="{ name: 'recipes' }"> Recipes </v-btn>
+     
+       <div class="col-md-3">
+        <div class="input-group">
+          <input type="search" class="form-control" placeholder="Search (Place, Itenary, Event)" aria-label="Search" aria-describedby="search-addon" />
+          <button class="btn btn-primary" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </button>
+        </div>
+      </div>
+
+      <!-- <a class="btn" href="/places">
+        Places
+      </a> -->
       <v-btn v-if="user === null" class="mx-2" :to="{ name: 'login' }">
         Login
-      </v-btn>
-      <v-btn v-if="user !== null" class="mx-2" :to="{ name: 'ingredients' }">
-        Ingredients
       </v-btn>
       <v-menu v-if="user !== null" min-width="200px" rounded>
         <template v-slot:activator="{ props }">
@@ -83,3 +105,12 @@ function logout() {
     </v-app-bar>
   </div>
 </template>
+
+<style scoped>
+ a {
+  color: white;
+ }
+ a:hover {
+  color: white;
+ }
+</style>
