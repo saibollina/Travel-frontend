@@ -8,7 +8,7 @@ export default {
     return apiClient.get("events");
   },
   getHotels() {
-    return apiClient.get("hotels");
+    return apiClient.get("hotels"); 
   },
   getPlace(id) {
     return apiClient.get("places/" + id);
