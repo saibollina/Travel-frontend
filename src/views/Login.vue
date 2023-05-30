@@ -143,7 +143,7 @@ function closeSnackBar() {
               >Create Account</v-btn
             >
           </v-card-actions>
-        </v-card>
+        </v-card> 
       </v-dialog>
 
       <v-snackbar v-model="snackbar.value" rounded="pill">
