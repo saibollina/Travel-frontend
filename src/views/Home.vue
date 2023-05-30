@@ -23,7 +23,7 @@ const searchPackage = () => {
 </script>
 <template>  
           <div class="row">
-            <img class="col-md-6" src="home.png" />
+            <img class="col-md-6" src="/home.png" />
             <div class="col-md-6 left-nav">
               <h2 class="display-3 text-1000 fw-normal title">Let’s make a tour</h2>
               <h2 class="display-3 text-primary fw-bold">Discover the beauty</h2>

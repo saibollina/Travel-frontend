@@ -24,12 +24,12 @@ const router = createRouter({
       component: () => import("./views/PlanList.vue"),
     },
     {
-      path: "/plan/:param",
+      path: "/plan/:planId",
       name: "plan",
       component: () => import("./views/Plan.vue"),
     },
     {
-      path: "/place",
+      path: "/place/:placeId",
       name: "place",
       component: () => import("./views/Place.vue"),
     },
@@ -44,9 +44,19 @@ const router = createRouter({
       component: () => import("./views/EventList.vue"),
     },
     {
-      path: "/event",
+      path: "/event/:eventId",
       name: "event",
       component: () => import("./views/Event.vue"),
+    },
+    {
+      path: "/hotels",
+      name: "hotels",
+      component: () => import("./views/HotelList.vue"),
+    },
+    {
+      path: "/hotel/:hotelId",
+      name: "hotel",
+      component: () => import("./views/Hotel.vue"),
     },
     {
       path: "/recipe/:id",
