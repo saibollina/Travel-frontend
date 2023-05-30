@@ -13,7 +13,7 @@ onMounted(async () => {
 
 <template>
   <v-container>
-     <h1>Place {{ placeId }}</h1>
+     <h1>Place {{ placeId }}</h1> 
   </v-container>
 </template>
 
