@@ -10,6 +10,7 @@ const user = ref(null);
 const title = ref("Travel Itenarary");
 const logoURL = ref("");
 
+
 onMounted(() => {
   logoURL.value = ocLogo;
   user.value = JSON.parse(localStorage.getItem("user"));
