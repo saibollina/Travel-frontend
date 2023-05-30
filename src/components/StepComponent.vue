@@ -26,7 +26,7 @@ const handleDelete = (event) => {
     {{ recipeStep.stepNumber }}
 
     {{ recipeStep.instruction }}
-
+ 
     <template v-slot:append>
       <v-icon
         size="x-small"
