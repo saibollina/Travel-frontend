@@ -15,6 +15,7 @@ onMounted(async () => {
   loader.value = false;
 });
 
+
 async function getEvents() {
   await PlaceServices.getEvents()
     .then((response) => {
