@@ -14,7 +14,7 @@ onMounted(async () => {
 });
 
 const searchPackage = () => {
-  return '/Plan?from='+from.value.toString()+'&to='+to.value.toString()+'&startDate='+startDate.value.toString()+'&endDate='+endDate.value.toString()
+  return '/plan?from='+from.value.toString()+'&to='+to.value.toString()+'&startDate='+startDate.value.toString()+'&endDate='+endDate.value.toString()
 }
 </script>
 <template>  
