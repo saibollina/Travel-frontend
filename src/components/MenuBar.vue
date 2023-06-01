@@ -29,7 +29,7 @@ function logout() {
   router.push({ name: "login" });
 }
 const searchItenary = () => {
-  return '/plans?search='+search.value.toString()
+  return './plans?search='+search.value.toString()
 }
 </script>
 
