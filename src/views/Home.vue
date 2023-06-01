@@ -1,11 +1,8 @@
 <script setup>
 import { onMounted } from "vue";
 import { useRouter } from "vue-router";
-// import UserServices from "../services/UserServices.js";
 import { ref } from "vue";
-// import VueRouter from 'vue-router';
 
-// Vue.use(VueRouter);
 const from = ref('');
 const to = ref('');
 const startDate = ref('');
@@ -17,8 +14,7 @@ onMounted(async () => {
 });
 
 const searchPackage = () => {
-      // const router = new VueRouter();
-      // router.push('/PlanList?from='+from+'&to='+to+'startDate='+startDate+'endDate='+endDate);
+  return '/Plan?from='+from.value.toString()+'&to='+to.value.toString()+'&startDate='+startDate.value.toString()+'&endDate='+endDate.value.toString()
 }
 </script>
 <template>  
@@ -55,7 +51,7 @@ const searchPackage = () => {
                           </div>
                         </div>
                          <div class="col-9 d-grid mt-6" style="display:flex;justify-content:center;">
-                          <button class="btn btn-secondary" type="submit" @click="searchPackage">Search Packages</button>
+                          <a class="btn btn-secondary" type="submit" :href="searchPackage()">Search Packages</a>
                         </div>
                       </form>
                     </div>
@@ -68,14 +64,14 @@ const searchPackage = () => {
         <section class="showcase">
             <div class="container-fluid p-0">
                 <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('it2.jpg')"></div>
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('/images/it2.jpg')"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="padding-left:30px;">
                         <h2>What we do?</h2>
                         <p class="lead mb-0">we strive to provide you with a comprehensive and dynamic online experience. Whether you're seeking information, entertainment, or connectivity, our platform is designed to meet your needs.</p>
                     </div>
                 </div>
                 <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('it3.jpg')"></div>
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('/images/it3.jpg')"></div>
                     <div class="col-lg-6 my-auto showcase-text"  style="padding-right:30px;padding-left:10px;">
                         <h2>How we do?</h2>
                         <p class="lead mb-0">Our homepage features a clean and intuitive interface, making it easy for you to explore the various sections of our website. We believe in a seamless user experience, ensuring that you can quickly find what you're looking for.</p>
@@ -95,10 +91,6 @@ const searchPackage = () => {
   background-color: #FE7A15;
   width:300px;
 }
-/* .left-nav {
-  margin-left: 20px;
-  padding-left: 70px;
-} */
 .g-0 {
   height:500px;
 }

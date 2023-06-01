@@ -6,15 +6,23 @@ import { ref } from "vue";
 import Loader from "../components/Loader.vue";
 import { getImageUrl } from "../utils.js";
 
+const router = useRouter();
 const plans = ref([]);
 const loader = ref(true);
+const search = ref(router.currentRoute.value.query.search);
+const from = ref(router.currentRoute.value.query.from);
+const to = ref(router.currentRoute.value.query.to);
+const startDate = ref(router.currentRoute.value.query.startDate);
+const endDate = ref(router.currentRoute.value.query.endDate);
+
+
 onMounted(async () => {
   await getPlans();
   loader.value = false;
 });
 
 async function getPlans() {
-  await PlanServices.getPlans()
+  await PlanServices.getPlans({ search:search.value,from:from.value,to:to.value,startDate:startDate.value,endDate:endDate.value})
     .then((response) => {
       plans.value = response.data;
     })
