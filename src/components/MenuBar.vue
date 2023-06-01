@@ -9,6 +9,7 @@ const router = useRouter();
 const user = ref(null);
 const title = ref("Travel Itenarary");
 const logoURL = ref("");
+const search = ref("")
 
 onMounted(() => {
   logoURL.value = ocLogo;
@@ -26,6 +27,9 @@ function logout() {
   localStorage.removeItem("user");
   user.value = null;
   router.push({ name: "login" });
+}
+const searchItenary = () => {
+  return '/Plans?search='+search.value.toString()
 }
 </script>
 
@@ -59,18 +63,14 @@ function logout() {
      
        <div class="col-md-3">
         <div class="input-group">
-          <input type="search" class="form-control" placeholder="Search (Place, Itenary, Event)" aria-label="Search" aria-describedby="search-addon" />
-          <button class="btn btn-primary" type="button">
+          <input type="search" class="form-control" placeholder="Search Plan" aria-label="Search" aria-describedby="search-addon" v-model="search" />
+          <a class="btn btn-primary" type="button" :href="searchItenary()">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                 </svg>
-              </button>
+              </a>
         </div>
       </div>
-
-      <!-- <a class="btn" href="./places">
-        Places
-      </a> -->
       <v-btn v-if="user === null" class="mx-2" :to="{ name: 'login' }">
         Login
       </v-btn>

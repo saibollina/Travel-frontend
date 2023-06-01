@@ -1,8 +1,10 @@
 import apiClient from "./services";
 
 export default {
-  getPlans() {
-    return apiClient.get("plans");
+  getPlans(queryParams) {
+    return apiClient.get("plans", {
+      params: queryParams,
+    });
   },
   getPlan(id) {
     return apiClient.get("plans/" + id);
