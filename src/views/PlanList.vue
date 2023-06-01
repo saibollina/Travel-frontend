@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, watch } from "vue";
 import { useRouter } from "vue-router";
 import PlanServices from "../services/PlanServices.js";
 import { ref } from "vue";
@@ -30,6 +30,18 @@ async function getPlans() {
       console.log(error);
     });
 }
+
+watch(
+  () => router.currentRoute.value.query,
+  async () => {
+    search.value = router.currentRoute.value.query.search || null;
+    from.value = router.currentRoute.value.query.from || null;
+    to.value = router.currentRoute.value.query.to || null;
+    startDate.value = router.currentRoute.value.query.startDate || null;
+    endDate.value = router.currentRoute.value.query.endDate || null;
+    await getPlans();
+  }
+);
 
 </script>
 

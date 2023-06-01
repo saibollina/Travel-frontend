@@ -22,6 +22,13 @@ const router = createRouter({
       path: "/plans",
       name: "plans",
       component: () => import("./views/PlanList.vue"),
+      props: (route) => ({
+        search: route.query.search || null,
+        from: route.query.from || null,
+        to: route.query.to || null,
+        startDate: route.query.startDate || null,
+        endDate: route.query.endDate || null,
+      }),
     },
     {
       path: "/plan/:planId",
