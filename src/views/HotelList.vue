@@ -45,7 +45,7 @@ const getHotelUrl = (id)=>{
                     <a :href="getHotelUrl(hotel.id)">
                         <img class="card-img" :src="getImageUrl(hotel.image)" alt="">
                         <h4 class="card-title">{{ hotel.name }}</h4>
-                        <p>{{ hotel.description.slice(0,300) }}...</p>
+                        <p>{{ hotel.description.slice(0,240) }}</p>
                         <button type="button" class="btn btn-warning">View Details</button>
                     </a>    
                 </div>

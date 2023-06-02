@@ -49,7 +49,7 @@ const getEventUrl = (id)=>{
                     <a :href="getEventUrl(event.id)">
                         <img class="card-img" :src="getImageUrl(event.image)" alt="">
                         <h4 class="card-title">{{ event.name }}</h4>
-                        <p>{{ event.description }}</p>
+                        <p>{{ event.description.slice(0,240) }}</p>
                         <button type="button" class="btn btn-warning">View Details</button>
                     </a>    
                 </div>

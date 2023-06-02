@@ -46,7 +46,9 @@ const searchItenary = () => {
         ></v-img>
       </router-link>
       <v-toolbar-title class="title" :style="{color:'white',cursor:'pointer'}" >
-        <!-- <a href="./">{{ title }}</a> -->
+        <a class="btn" href="./plans">
+          Trips
+        </a>
          <a class="btn" href="./places" style="margin-left:10px;">
         Places
         </a>
@@ -56,9 +58,7 @@ const searchItenary = () => {
         <a class="btn" href="./hotels" style="margin-left:10px;">
         Hotels
         </a>
-        <a class="btn" href="./plans">
-          Plans
-        </a>
+
       </v-toolbar-title>
      
        <div class="col-md-3">
