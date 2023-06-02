@@ -42,6 +42,9 @@ watch(
     await getPlans();
   }
 );
+const getPlanUrl = (id)=>{
+    return "./plan/"+id
+}
 
 </script>
 
@@ -58,10 +61,10 @@ watch(
             </div>
             <div class="row">
                 <div v-for="plan in plans" :key="plan.id" class="col-md-6 col-lg-4 mb-4 mb-md-0 place">
-                    <a href="./plan">
+                    <a :href="getPlanUrl(plan.id)">
                         <img class="card-img" :src="getImageUrl(plan.image)" alt="">
                         <h4 class="card-title">{{ plan.name }}</h4>
-                        <p>{{ plan.description }}</p>
+                        <p>{{ plan.description.slice(0,240) }}</p>
                         <button type="button" class="btn btn-warning">View Details</button>
                     </a>    
                 </div>

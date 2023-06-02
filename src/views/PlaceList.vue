@@ -45,7 +45,7 @@ const getPlaceUrl = (id)=>{
                     <a :href="getPlaceUrl(place.id)">
                         <img class="card-img" :src="getImageUrl(place.image)" alt="">
                         <h4 class="card-title">{{ place.name }}</h4>
-                        <p>{{ place.description }}</p>
+                        <p>{{ place.description.slice(0,240) }}</p>
                         <button type="button" class="btn btn-warning">View Details</button>
                     </a>    
                 </div>
