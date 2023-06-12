@@ -60,6 +60,21 @@ const router = createRouter({
       name: "hotel",
       component: () => import("./views/Hotel.vue"),
     },
+    {
+      path: "/add-plan",
+      name: "addItenarary",
+      component: () => import("./views/AddPlan.vue"),
+    },
+    {
+      path: "/edit-plan/:id",
+      name: "editItenarary",
+      component: () => import("./views/EditPlan.vue"),
+    },
+    {
+      path: "/orders",
+      name: "orders",
+      component: () => import("./views/Orders.vue"),
+    },
     
   ],
 });
