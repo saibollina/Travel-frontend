@@ -105,7 +105,7 @@ async function deletePlan() {
                     <div class="day">
                     <h5>Day {{ day.day}}</h5>
                     <p> {{ day.description }} </p>
-                    <a class="btn btn-primary btn-sm" :href="getPlaceUrl(day.placeId)" v-if="day.placeId"> Show place </a>
+                    <a class="btn btn-primary btn-sm" :href="getPlaceUrl(day.placeId)" v-if="day.placeId"> Show More </a>
                     </div>
                 </div>
                 </div>
