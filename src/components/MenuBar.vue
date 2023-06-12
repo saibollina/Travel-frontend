@@ -28,8 +28,8 @@ function logout() {
   user.value = null;
   router.push({ name: "login" });
 }
-const searchItenary = () => {
-  return './plans?search='+search.value.toString()
+const searchTrip = () => {
+  return '/travel-frontend/plans?search='+search.value.toString()
 }
 </script>
 
@@ -46,17 +46,23 @@ const searchItenary = () => {
         ></v-img>
       </router-link>
       <v-toolbar-title class="title" :style="{color:'white',cursor:'pointer'}" >
-        <a class="btn" href="./plans">
+        <a class="btn" href="/travel-frontend/plans">
           Trips
         </a>
-         <a class="btn" href="./places" style="margin-left:10px;">
+         <a class="btn" href="/travel-frontend/places" style="margin-left:10px;">
         Places
         </a>
-        <a class="btn" href="./events">
+        <a class="btn" href="/travel-frontend/events">
           Events
         </a>
-        <a class="btn" href="./hotels" style="margin-left:10px;">
+        <a class="btn" href="/travel-frontend/hotels" style="margin-left:10px;">
         Hotels
+        </a>
+        <a class="btn" href="/travel-frontend/add-plan" style="margin-left:10px;" v-if="user !== null && user?.role != 0">
+        Create Trip
+        </a>
+        <a class="btn" href="/travel-frontend/orders" style="margin-left:10px;" v-if="user !== null && user?.role == 0">
+          Bookings
         </a>
 
       </v-toolbar-title>
@@ -64,7 +70,7 @@ const searchItenary = () => {
        <div class="col-md-3">
         <div class="input-group">
           <input type="search" class="form-control" placeholder="Search Plan" aria-label="Search" aria-describedby="search-addon" v-model="search" />
-          <a class="btn btn-primary" type="button" :href="searchItenary()">
+          <a class="btn btn-primary" type="button" :href="searchTrip()">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                 </svg>

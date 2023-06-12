@@ -43,7 +43,7 @@ watch(
   }
 );
 const getPlanUrl = (id)=>{
-    return "./plan/"+id
+    return "/travel-frontend/plan/"+id
 }
 
 </script>
@@ -53,7 +53,7 @@ const getPlanUrl = (id)=>{
       <div class="container" style="margin-top:20px">
        <section class="section-margin">
             <div class="container">
-                <h2>Trips</h2>
+                <h2>Plans</h2>
             </div>
             <Loader v-if="loader" />
             <div class="alert alert-warning"  v-if="!loader && plans.length == 0" role="alert" style="margin-top:30px;">
