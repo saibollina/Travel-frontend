@@ -43,7 +43,6 @@ const getPlanUrl = (id)=>{
                 <div class="col-md-6">
                   <p class="col-md-12">{{ place.description}}</p>
                   <p class="col-md-12"> <strong>Rating </strong> {{ place.rating}}/10</p>
-                  <a class="btn btn-primary btn-sm" :href="getPlanUrl(place.planId)" v-if="place.planId != null"> Show plan </a>
                 </div>
             </div>
       </div>

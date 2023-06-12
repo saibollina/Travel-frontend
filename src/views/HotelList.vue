@@ -24,7 +24,7 @@ async function getHotels() {
 }
 
 const getHotelUrl = (id)=>{
-    return "./place/"+id
+    return "/travel-frontend/place/"+id
 }
 
 </script>
