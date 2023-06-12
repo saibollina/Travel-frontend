@@ -24,7 +24,7 @@ async function getPlaces() {
 }
 
 const getPlaceUrl = (id)=>{
-    return "./place/"+id
+    return "/travel-frontend/place/"+id
 }
 
 </script>
