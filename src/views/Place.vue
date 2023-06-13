@@ -42,7 +42,7 @@ const getPlanUrl = (id)=>{
                 </div>
                 <div class="col-md-6">
                   <p class="col-md-12">{{ place.description}}</p>
-                  <p class="col-md-12"> <strong>Rating </strong> {{ place.rating}}/10</p>
+                  <p class="col-md-12"> <strong>Rating </strong> {{ place.rating}}/5</p>
                 </div>
             </div>
       </div>

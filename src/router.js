@@ -46,19 +46,9 @@ const router = createRouter({
       component: () => import("./views/EventList.vue"),
     },
     {
-      path: "/event/:eventId",
-      name: "event",
-      component: () => import("./views/Event.vue"),
-    },
-    {
       path: "/hotels",
       name: "hotels",
       component: () => import("./views/HotelList.vue"),
-    },
-    {
-      path: "/hotel/:hotelId",
-      name: "hotel",
-      component: () => import("./views/Hotel.vue"),
     },
     {
       path: "/add-plan",
