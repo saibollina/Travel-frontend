@@ -100,7 +100,7 @@ async function deletePlan() {
                 <h5>Starting date is <strong>{{ plan.starts_on.slice(0,10) }}</strong></h5>
                 <h5>Ending date is <strong>{{ plan.ends_on.slice(0,10) }} </strong></h5>
                 <h5>Total cost is <strong>${{ plan.cost }} </strong></h5>
-                <h5>Rating is <strong>{{ plan.rating }}/10 </strong></h5>
+                <h5>Rating is <strong>{{ plan.rating }}/5 </strong></h5>
                 <div v-for="(day,index) in plan.day" :key="index" class="days">
                     <div class="day">
                     <h5>Day {{ day.day}}</h5>
